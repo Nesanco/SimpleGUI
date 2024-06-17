@@ -37,6 +37,8 @@ Many GUI libraries are very complicated for no reason, which is why SimpleGUI al
 
 When using the format method, make sure each line only has 9 characters since a GUI only has 9 lines per row. If you wanted to make a GUI that is 3 rows instead of 6, put null in the unused rows.
 
+Note that spaces are interpreted as blank spaces within the GUI
+
 # Locking
 
 Using the lock method will prevent players from removing/adding items to the GUI, you can exclude certain slots from being locked, if you want all slots to be locked, put null in the lock method
