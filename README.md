@@ -34,14 +34,14 @@ Many GUI libraries are very complicated for no reason, which is why SimpleGUI al
 
 # Maven
 
-```java
+```
         <dependency>
             <groupId>com.github.Nesanco</groupId>
             <artifactId>SimpleGUI</artifactId>
             <version>1.0</version>
         </dependency>
 ```
-```java
+```
         <repository>
             <id>jitpack.io</id>
             <url>https://jitpack.io</url>
