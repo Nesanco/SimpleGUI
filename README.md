@@ -32,6 +32,21 @@ Many GUI libraries are very complicated for no reason, which is why SimpleGUI al
 ```
 ![image](https://github.com/Nesanco/SimpleGUI/assets/80917510/f04ea3b5-574e-4e80-9799-9873590b4df8)
 
+# Maven
+
+``java
+        <dependency>
+            <groupId>com.github.Nesanco</groupId>
+            <artifactId>SimpleGUI</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+``
+
 
 # Format
 
