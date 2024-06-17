@@ -30,6 +30,8 @@ Many GUI libraries are very complicated for no reason, which is why SimpleGUI al
         }));
         gui.open((Player) sender);
 ```
+![image](https://github.com/Nesanco/SimpleGUI/assets/80917510/f04ea3b5-574e-4e80-9799-9873590b4df8)
+
 
 # Format
 
