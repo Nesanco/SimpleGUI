@@ -2,8 +2,9 @@
 
 Many GUI libraries are very complicated for no reason, which is why SimpleGUI allows you to create advanced GUIs with ease
 
-# Example
+# Examples
 
+BasicGUI
 ```java
         ItemStack background = new ItemBuilder(Material.GRAY_STAINED_GLASS_PANE).setName("").build();
         ItemStack close = new ItemBuilder(Material.RED_CONCRETE).setName("Close").build();
@@ -32,6 +33,52 @@ Many GUI libraries are very complicated for no reason, which is why SimpleGUI al
 ```
 ![image](https://github.com/Nesanco/SimpleGUI/assets/80917510/f04ea3b5-574e-4e80-9799-9873590b4df8)
 
+PagedGUI
+```java
+        ItemStack background = new ItemBuilder(Material.GRAY_STAINED_GLASS_PANE).setName("").build();
+        ItemStack back = new ItemBuilder(Material.RED_CONCRETE).setName("Back").build();
+        ItemStack next = new ItemBuilder(Material.LIME_CONCRETE).setName("Next").build();
+
+        Player player = (Player) sender;
+
+        PagedGUI gui = new PagedGUI("Page 0", 54);
+        gui.setFormat(new Format(
+                        "#########",
+                        "         ",
+                        "         ",
+                        "         ",
+                        "         ",
+                        "###+#.###"
+                )
+                        .setFormat("#", background)
+                        .setFormat(".", next)
+                        .setFormat("+", back)
+        );
+        gui.lock(null);
+
+        for (Material material : Material.values()) {
+            ItemStack stack = new ItemStack(material);
+            gui.addItem(stack);
+        }
+
+        gui.addComponent(new Button(50, e -> {
+            String name = gui.getName().replace("Page ", "");
+            int page = Integer.parseInt(name);
+
+            gui.setName("Page " + (page+1));
+            gui.open(page + 1, player);
+        }));
+
+        gui.addComponent(new Button(48, e -> {
+            String name = gui.getName().replace("Page ", "");
+            int page = Integer.parseInt(name);
+
+            gui.setName("Page " + (page-1));
+            gui.open(page - 1, player);
+        }));
+        gui.open(0, player);
+```
+
 # Maven
 
 ```
@@ -50,7 +97,7 @@ Many GUI libraries are very complicated for no reason, which is why SimpleGUI al
 
 # Format
 
-When using the format method, make sure each line only has 9 characters since a GUI only has 9 lines per row. If you wanted to make a GUI that is 3 rows instead of 6, put null in the unused rows.
+When using the format method, make sure each line only has 9 characters since a GUI only has 9 lines per row. If you wanted to make a GUI that is 3 rows instead of 6, put null in the unused rows
 
 Note that spaces are interpreted as blank spaces within the GUI
 
@@ -62,9 +109,15 @@ Using the lock method will prevent players from removing/adding items to the GUI
 
 The library comes with a utility to quickly build item stacks and modify them. Using the ItemBuilder constructor, you can customize the itemstack to change its name, flags, enchants, etc
 
+# Paged GUIs
+
+The paged GUIs are intented to help make GUIs for things such as shops, vaults, lists, etc.
+
+The format, component, and locking aspect of the paged GUIs work the same way as the BasicGUIs, except, they will be applied to all pages within the paged GUI. The items added to the GUI will automatically move to the next page when there isnt enough space left
+
 # Need more help?
 
-Go into the GUI class to view every method, each method has a short description of what it does
+Go into the GUI classes to view every method, each method has a short description of what it does
 
 # TODO
 
