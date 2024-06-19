@@ -121,6 +121,8 @@ The format, component, and locking aspect of the paged GUIs work the same way as
 
 Go into the GUI classes to view every method, each method has a short description of what it does
 
+You can also DM me on Discord for help, username: nesanco
+
 # TODO
 
 - <s>Paged GUIs</s>
