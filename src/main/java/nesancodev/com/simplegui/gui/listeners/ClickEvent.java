@@ -13,11 +13,9 @@ public class ClickEvent implements Listener {
     @EventHandler
     public void onInventoryClick(InventoryClickEvent e) {
         Inventory inventory = e.getInventory();
-        Bukkit.broadcastMessage("STEP 1");
         if (BasicGUI.guiHashMap.get(inventory) == null) {
             return;
         }
-        Bukkit.broadcastMessage("STEP 2");
 
         BasicGUI gui = BasicGUI.guiHashMap.get(inventory);
         int slot = e.getSlot();
