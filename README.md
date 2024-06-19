@@ -68,5 +68,5 @@ Go into the GUI class to view every method, each method has a short description 
 
 # TODO
 
-<s>- Animations
-<s>- Paged GUIs
+- <s>Paged GUIs
+- Animations
