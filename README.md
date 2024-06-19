@@ -9,7 +9,7 @@ Many GUI libraries are very complicated for no reason, which is why SimpleGUI al
         ItemStack close = new ItemBuilder(Material.RED_CONCRETE).setName("Close").build();
         ItemStack moveableSword = new ItemBuilder(Material.DIAMOND_SWORD).setName("The Great Sword").setEnchantEffect().build();
 
-        GUI gui = new GUI("Example GUI", 54, null);
+        BasicGUI gui = new BasicGUI("Example GUI", 54, null);
         gui.setFormat(new Format(
                         "#########",
                         "#########",
@@ -68,5 +68,5 @@ Go into the GUI class to view every method, each method has a short description 
 
 # TODO
 
-- Animations
-- Paged GUIs
+<s>- Animations
+<s>- Paged GUIs
