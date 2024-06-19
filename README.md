@@ -78,6 +78,8 @@ PagedGUI
         }));
         gui.open(0, player);
 ```
+![image](https://github.com/Nesanco/SimpleGUI/assets/80917510/6b30cb56-a007-487d-9726-f2c601602611)
+
 
 # Maven
 
