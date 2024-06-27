@@ -1,6 +1,5 @@
 package nesancodev.com.simplegui.utils;
 
-import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
@@ -9,29 +8,29 @@ import org.bukkit.inventory.meta.ItemMeta;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ItemBuilder {
+public class ItemEditer {
     private ItemStack stack;
     private ArrayList<String> lore = new ArrayList<>();
 
-    public ItemBuilder(Material material) {
-        stack = new ItemStack(material);
+    public ItemEditer(ItemStack stack) {
+        this.stack = stack;
     }
 
-    public ItemBuilder setName(String name) {
+    public ItemEditer setName(String name) {
         ItemMeta meta = stack.getItemMeta();
         meta.setDisplayName(name);
         stack.setItemMeta(meta);
         return this;
     }
 
-    public ItemBuilder setLore(List<String> lore) {
+    public ItemEditer setLore(List<String> lore) {
         ItemMeta meta = stack.getItemMeta();
         meta.setLore(lore);
         stack.setItemMeta(meta);
         return this;
     }
 
-    public ItemBuilder setEnchantEffect() {
+    public ItemEditer setEnchantEffect() {
         ItemMeta meta = stack.getItemMeta();
         meta.addEnchant(Enchantment.LURE, 1, true);
         meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
@@ -39,21 +38,21 @@ public class ItemBuilder {
         return this;
     }
 
-    public ItemBuilder addEnchant(Enchantment enchantment, int level) {
+    public ItemEditer addEnchant(Enchantment enchantment, int level) {
         ItemMeta meta = stack.getItemMeta();
         meta.addEnchant(enchantment, level, true);
         stack.setItemMeta(meta);
         return this;
     }
 
-    public ItemBuilder addFlag(ItemFlag flag) {
+    public ItemEditer addFlag(ItemFlag flag) {
         ItemMeta meta = stack.getItemMeta();
         meta.addItemFlags(flag);
         stack.setItemMeta(meta);
         return this;
     }
 
-    public ItemBuilder addLore(String lore) {
+    public ItemEditer addLore(String lore) {
         this.lore.add(lore);
 
         ItemMeta meta = stack.getItemMeta();
